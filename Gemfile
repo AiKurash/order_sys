@@ -21,16 +21,28 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
-# Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+gem 'rename'
+
+gem 'nested_scaffold'
+
+gem 'simple_form'
+
+gem 'wicked_pdf'
+
+gem 'wkhtmltopdf-binary'
+
+gem 'rolify'
+
+gem 'ransack'
+
+gem 'friendly_id', '~> 5.2.4'
+
+gem 'aasm'
+
+gem 'after_commit_everywhere', '~> 1.0'
 
 group :development, :test do
   gem 'pg', '1.2.3'

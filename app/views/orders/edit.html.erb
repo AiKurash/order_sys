@@ -1,0 +1,7 @@
+<h1>Editing Order</h1>
+
+<%= render 'form', order: @order %>
+
+<%= link_to 'Show', @order %> |
+<%= link_to 'Back', orders_path %>
+<%= link_to 'Destroy', @order, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>

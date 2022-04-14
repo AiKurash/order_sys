@@ -5,6 +5,12 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        <%= @user.email %>
+        <% @user.roles.each do |role| %>
+          <div class="badge badge-info">
+            <%= role.name %>
+          </div>
+        <% end %>
       </h1>
     </section>
   </aside>

@@ -1,0 +1,81 @@
+<% content_for :title do %>
+  Corsego
+  \|
+  All Users
+<% end %>
+<h3>
+  <div class="text-center">
+    Users
+    <div class="badge badge-info">
+      <%= @users.count %>
+    </div>
+  </div>
+</h3>
+<p></p>
+<div class="form-inline">
+  
+  <%= search_form_for @q do |f| %>
+    <%= f.search_field :email_cont, placeholder: 'email' %>
+    <%= f.submit %>
+  <% end %>
+  <div class="ml-2"></div>
+  <%= link_to 'refresh', users_path %>
+</div>
+<br/>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped table-sm table-hover">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>
+          <%= sort_link(@q, :name) %>
+        </th>
+        <th>
+            <p> User is online? </p>
+          <%= sort_link(@q, :email) %>
+        </th>
+        <th>
+          <%= sort_link(@q, :created_at) %>
+        </th>
+
+        <th>Roles</th>
+        <th>
+          <p> Count of Orders </p>
+        </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= user.id %>
+          </td>
+          <td>
+
+            <%= link_to user.email, user_path(user) %>
+          </td>
+          <td>
+            <%= user.created_at.strftime('%m/%d/%y, %H:%M') %>
+          </td>
+
+          <td>
+            <% user.roles.each do |role| %>
+              <div class="badge badge-info">
+                <%= role.name %>
+              </div>
+            <% end %>
+
+          </td>
+          <td>
+            <%= user.orders.count %>
+          </td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<p></p>
+
+<br/>

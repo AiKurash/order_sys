@@ -1,0 +1,31 @@
+
+<%= simple_form_for(@task) do |f| %>
+  <%= f.error_notification %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :aasm_state %>
+  </div>
+
+  <div class="form-actions">
+    <% if @task.aasm_state == "requested" %>
+        <%= link_to 'Approve Order', @task, method: :patch, class: 'btn btn-primary' %>
+      <% elsif @task.aasm_state == "production" %>
+        <%= link_to 'Complete Order', @task, method: :patch, class: 'btn btn-primary' %>
+      <% elsif @task.aasm_state == "inactive" %>
+
+        <%= f.submit 'Request', class: 'btn btn-primary' %>
+
+    <% end %>
+
+    <% if @task.aasm_state != "complete" %>
+      <%= link_to 'Cancel Order', @task, method: :patch, class: 'btn btn-danger' %>
+    <% end %>
+      </div>
+  </div>
+  </div>
+</div>
+<% end %>

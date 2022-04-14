@@ -1,0 +1,7 @@
+<h1> Elevation Certificate </h1>
+<%= @certificate.Hag %>
+<%= @certificate.comment %>
+
+<%= link_to "Print", order_certificate_path(@certificate, format: :pdf) %>
+<%= link_to "Back", order_path(@certificate.order) %>
+<%= link_to "Edit Certificate", edit_order_certificate_path %>

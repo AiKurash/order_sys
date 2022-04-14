@@ -1,2 +1,2 @@
-mvp_app_DATABASE_USER: postgres
-mvp_app_DATABASE_PASSWORD: Akira123!
+order_sys_DATABASE_USER: postgres
+order_sys_DATABASE_PASSWORD: Akira123!
